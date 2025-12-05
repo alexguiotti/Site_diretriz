@@ -1,0 +1,104 @@
+import React from 'react';
+import { ArrowRight, Zap, Shield, Truck } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const Hero = () => {
+    return (
+        <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden bg-slate-50">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
+                    alt="Centro de Distribuição"
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/95 to-slate-50/20"></div>
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="max-w-3xl">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-slate-900"
+                    >
+                        O futuro da <br />
+                        <span className="text-primary-light">reposição automotiva</span>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl"
+                    >
+                        Conectando tecnologia e logística para entregar mais de 50.000 itens com precisão e velocidade. A evolução do seu negócio começa aqui.
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="flex flex-wrap gap-3 mb-10"
+                    >
+                        {["Linha Leve", "Linha Média", "Linha Pesada"].map((line, i) => (
+                            <span key={i} className="px-4 py-2 bg-blue-50 text-primary-light rounded-lg font-semibold text-sm border border-blue-100 flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-accent"></span>
+                                {line}
+                            </span>
+                        ))}
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                        className="flex flex-col sm:flex-row items-center gap-6"
+                    >
+                        <a
+                            href="https://wa.me/556232994488"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group w-full sm:w-auto bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                        >
+                            Falar com Especialista
+                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        </a>
+                        <a
+                            href="#categories"
+                            className="group w-full sm:w-auto bg-white border border-slate-200 text-slate-700 hover:text-primary px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-3 shadow-sm hover:shadow-md hover:border-primary/30"
+                        >
+                            Ver Catálogo
+                        </a>
+                    </motion.div>
+
+                    {/* Stats/Features Grid */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 pt-10 border-t border-slate-200 max-w-2xl"
+                    >
+                        {[
+                            { icon: Zap, label: "Entrega Flash", desc: "Logística otimizada" },
+                            { icon: Shield, label: "Garantia Total", desc: "Produtos originais" }
+                        ].map((item, index) => (
+                            <div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <div className="p-3 bg-blue-50 rounded-lg text-primary">
+                                    <item.icon size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="text-slate-900 font-semibold">{item.label}</h3>
+                                    <p className="text-slate-500 text-sm">{item.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Hero;

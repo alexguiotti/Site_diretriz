@@ -1,0 +1,50 @@
+{
+  "suppliers": [
+    { "id": 1, "name": "3M", "url": "https://www.3m.com.br" },
+    { "id": 2, "name": "3RHO", "url": "http://www.3rho.com.br/" },
+    { "id": 3, "name": "AJE", "url": "http://www.aje.ind.br/" },
+    { "id": 4, "name": "ALMAPY", "url": "https://www.almapy.com.br/" },
+    { "id": 5, "name": "ALPENFIX", "url": "http://www.alpenfix.com.br/" },
+    { "id": 6, "name": "AMEFIL", "url": "http://www.amefil.com.br/" },
+    { "id": 7, "name": "AMS", "url": "http://www.amscomponentes.com.br/" },
+    { "id": 8, "name": "ANTICO", "url": "http://www.antico.com.br/" },
+    { "id": 9, "name": "ARTEB", "url": "http://www.arteb.com.br/" },
+    { "id": 10, "name": "ASPOCK", "url": "http://www.aspock.com.br/" },
+    { "id": 11, "name": "AUTO POLI", "url": "http://www.autopoli.com.br/" },
+    { "id": 12, "name": "BOSAL", "url": "http://www.bosal.com/" },
+    { "id": 13, "name": "BRASLUX", "url": "http://www.braslux.com/" },
+    { "id": 14, "name": "CAR 80", "url": "http://www.car-80.com/por/index.html" },
+    { "id": 15, "name": "CARRHEL", "url": "http://www.carrhel.com.br/" },
+    { "id": 16, "name": "CERTA", "url": "http://www.certaimports.com.br/" },
+    { "id": 17, "name": "CINAP", "url": "http://www.cinap.com.br/" },
+    { "id": 18, "name": "COFRAN", "url": "http://www.cofran.com.br/" },
+    { "id": 19, "name": "CONIMEL", "url": "http://www.conimel.com.br/" },
+    { "id": 20, "name": "CONTITECH", "url": "http://www.conti-online.com/" },
+    { "id": 21, "name": "CORTISUL", "url": "http://www.cortisul.com.br/" },
+    { "id": 22, "name": "D PAULA", "url": "http://www.dpaula.com.br/" },
+    { "id": 23, "name": "DELCO REMY", "url": "http://www.remyinc.com.br/" },
+    { "id": 24, "name": "DELPHI", "url": "http://www.delphi.com/" },
+    { "id": 25, "name": "DENSO", "url": "https://www.denso.com/br/pt/" },
+    { "id": 26, "name": "DM REFLETIVOS", "url": "http://dmrefletivos.com.br/" },
+    { "id": 27, "name": "DNI", "url": "http://www.dni.com.br/" },
+    { "id": 28, "name": "DOFAB", "url": "http://www.dofab.com.br/" },
+    { "id": 29, "name": "DRIFT", "url": "http://www.driftdobrasil.com.br/" },
+    { "id": 30, "name": "DS", "url": "http://www.ds.ind.br/pt/" },
+    { "id": 31, "name": "DSC", "url": "http://www.dscautopecas.com.br/" },
+    { "id": 32, "name": "DYNA", "url": "http://www.dyna.com.br/" },
+    { "id": 33, "name": "EURO", "url": "http://www.traex.com.br/" },
+    { "id": 34, "name": "FACOBRAS", "url": "http://www.facobras.com.br/" },
+    { "id": 35, "name": "FIAMM", "url": "http://www.fiamm.com.br/" },
+    { "id": 36, "name": "FLORIO", "url": "http://www.florio.com.br/" },
+    { "id": 37, "name": "FORTLUZ", "url": "http://www.farois-fortluz.com.br/" },
+    { "id": 38, "name": "G.F.", "url": "http://www.gflanternas.com.br/" }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "name": "Administrador"
+    }
+  ]
+}

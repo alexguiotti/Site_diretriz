@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f172a;
+  /* Navy Blue */
+  --color-primary-light: #1e40af;
+  /* Brighter Blue */
+  --color-secondary: #475569;
+  /* Slate 600 */
+  --color-accent: #dc2626;
+  /* Red 600 */
+  --color-accent-hover: #b91c1c;
+  /* Red 700 */
+
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply bg-slate-50 text-slate-800;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-400 rounded-full hover:bg-slate-500 transition-colors;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.pause-on-hover:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Updated Utility Classes for Clean Look */
+.glass-panel {
+  @apply bg-white border border-slate-200 shadow-lg;
+}
+
+.tech-card {
+  @apply bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+}
