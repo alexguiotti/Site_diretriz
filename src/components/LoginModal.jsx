@@ -26,11 +26,17 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+        >
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden relative animate-in fade-in zoom-in duration-300">
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors"
+                    aria-label="Fechar modal"
                 >
                     <X size={24} />
                 </button>
@@ -40,7 +46,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
                         <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <Lock className="text-accent" size={32} />
                         </div>
-                        <h2 className="text-2xl font-bold text-primary">Área do Colaborador</h2>
+                        <h2 id="modal-title" className="text-2xl font-bold text-primary">Área do Colaborador</h2>
                         <p className="text-secondary mt-2">Acesse o painel administrativo</p>
                     </div>
 

@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import jwt from 'jsonwebtoken';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const JWT_SECRET = process.env.JWT_SECRET || 'sua_chave_secreta_super_segura_dev';
 
 // Middleware
 app.use(cors());
@@ -23,7 +25,6 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
     console.error('Erro: MONGODB_URI não definida no arquivo .env');
-    // Não encerra o processo para permitir que o usuário veja o erro, mas a API vai falhar nas chamadas de banco
 } else {
     mongoose.connect(MONGODB_URI)
         .then(() => console.log('Conectado ao MongoDB com sucesso'))
@@ -40,24 +41,40 @@ const SupplierSchema = new mongoose.Schema({
 
 const Supplier = mongoose.model('Supplier', SupplierSchema);
 
+// Auth Middleware
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+
+    if (!token) return res.status(401).json({ message: 'Acesso negado. Token não fornecido.' });
+
+    jwt.verify(token, JWT_SECRET, (err, user) => {
+        if (err) return res.status(403).json({ message: 'Token inválido ou expirado.' });
+        req.user = user;
+        next();
+    });
+};
+
 // Login Endpoint
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
     // Hardcoded admin for simplicity/bootstrap
-    // Em produção real, você usaria um UserSchema e hash de senha (bcrypt)
     if (email === 'admin@diretriz.com' && password === '123') {
+        const user = { name: 'Administrador', email: 'admin@diretriz.com', role: 'admin' };
+        const token = jwt.sign(user, JWT_SECRET, { expiresIn: '8h' });
+
         res.json({
             success: true,
-            token: 'fake-jwt-token-production',
-            user: { name: 'Administrador', email: 'admin@diretriz.com' }
+            token,
+            user
         });
     } else {
         res.status(401).json({ success: false, message: 'Credenciais inválidas' });
     }
 });
 
-// Get Suppliers
+// Get Suppliers (Public)
 app.get('/suppliers', async (req, res) => {
     try {
         const suppliers = await Supplier.find().sort({ createdAt: -1 });
@@ -67,10 +84,17 @@ app.get('/suppliers', async (req, res) => {
     }
 });
 
-// Add Supplier
-app.post('/suppliers', async (req, res) => {
+// Add Supplier (Protected)
+app.post('/suppliers', authenticateToken, async (req, res) => {
     try {
-        const newSupplier = new Supplier(req.body);
+        const { name, url, logo } = req.body;
+
+        // Basic Validation
+        if (!name || !url || !logo) {
+            return res.status(400).json({ message: 'Todos os campos (nome, url, logo) são obrigatórios.' });
+        }
+
+        const newSupplier = new Supplier({ name, url, logo });
         await newSupplier.save();
         res.json(newSupplier);
     } catch (error) {
@@ -78,11 +102,17 @@ app.post('/suppliers', async (req, res) => {
     }
 });
 
-// Update Supplier
-app.put('/suppliers/:id', async (req, res) => {
+// Update Supplier (Protected)
+app.put('/suppliers/:id', authenticateToken, async (req, res) => {
     try {
         const { id } = req.params;
-        const updatedSupplier = await Supplier.findByIdAndUpdate(id, req.body, { new: true });
+        const { name, url, logo } = req.body;
+
+        if (!name || !url || !logo) {
+            return res.status(400).json({ message: 'Todos os campos (nome, url, logo) são obrigatórios.' });
+        }
+
+        const updatedSupplier = await Supplier.findByIdAndUpdate(id, { name, url, logo }, { new: true });
 
         if (updatedSupplier) {
             res.json(updatedSupplier);
@@ -94,8 +124,8 @@ app.put('/suppliers/:id', async (req, res) => {
     }
 });
 
-// Delete Supplier
-app.delete('/suppliers/:id', async (req, res) => {
+// Delete Supplier (Protected)
+app.delete('/suppliers/:id', authenticateToken, async (req, res) => {
     try {
         const { id } = req.params;
         await Supplier.findByIdAndDelete(id);
@@ -105,9 +135,9 @@ app.delete('/suppliers/:id', async (req, res) => {
     }
 });
 
-// Health Check (para serviços de hospedagem saberem que está rodando)
+// Health Check
 app.get('/', (req, res) => {
-    res.send('API Autopecas-Pro rodando!');
+    res.send('API Autopecas-Pro rodando com segurança!');
 });
 
 app.listen(PORT, () => {
