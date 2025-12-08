@@ -53,19 +53,19 @@ const SupplierCard = ({ supplier }) => {
 };
 
 const DEFAULT_SUPPLIERS = [
-    { name: 'Bosch', url: 'https://www.bosch.com.br', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Bosch-logo.svg' },
-    { name: 'Continental', url: 'https://www.continental.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Continental_logo.svg' },
-    { name: 'Delphi', url: 'https://www.delphiautoparts.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/Delphi_Automotive_Logo.svg' },
-    { name: 'Valeo', url: 'https://www.valeo.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Valeo_Logo.svg' },
-    { name: 'Magneti Marelli', url: 'https://www.magnetimarelli.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Magneti_Marelli_logo.svg/1024px-Magneti_Marelli_logo.svg.png' },
-    { name: 'Schaeffler', url: 'https://www.schaeffler.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Schaeffler_Group_logo.svg' },
-    { name: 'Monroe', url: 'https://www.monroe.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Monroe_logo.png' },
-    { name: 'Pirelli', url: 'https://www.pirelli.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Pirelli_logo.svg' },
-    { name: 'Osram', url: 'https://www.osram.com.br', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Osram_Logo.svg' },
-    { name: 'Hella', url: 'https://www.hella.com', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Hella_logo.svg' },
+    { name: 'Bosch', url: 'https://www.bosch.com.br', logoUrl: 'https://cdn.worldvectorlogo.com/logos/bosch.svg' },
+    { name: 'Continental', url: 'https://www.continental.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/continental-3.svg' },
+    { name: 'Delphi', url: 'https://www.delphiautoparts.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/delphi-2.svg' },
+    { name: 'Valeo', url: 'https://www.valeo.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/valeo.svg' },
+    { name: 'Magneti Marelli', url: 'https://www.magnetimarelli.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/magneti-marelli-1.svg' },
+    { name: 'Schaeffler', url: 'https://www.schaeffler.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/schaeffler.svg' },
+    { name: 'Monroe', url: 'https://www.monroe.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/monroe.svg' },
+    { name: 'Pirelli', url: 'https://www.pirelli.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/pirelli.svg' },
+    { name: 'Osram', url: 'https://www.osram.com.br', logoUrl: 'https://cdn.worldvectorlogo.com/logos/osram.svg' },
+    { name: 'Hella', url: 'https://www.hella.com', logoUrl: 'https://cdn.worldvectorlogo.com/logos/hella-1.svg' },
     { name: 'ASX', url: 'https://www.asxiluminacao.com.br', logoUrl: 'https://asxiluminacao.com.br/wp-content/uploads/2023/06/logo-asx-header.png' },
     { name: 'Delco Remy', url: 'https://www.delcoremy.com.br', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Delco_Remy_Logo.svg/2560px-Delco_Remy_Logo.svg.png' },
-    { name: 'Gauss', url: 'https://www.gauss.com.br' }
+    { name: 'Gauss', url: 'https://www.gauss.com.br', logoUrl: 'https://gauss.com.br/wp-content/uploads/2020/11/logo_gauss_novo.png' }
 ];
 
 const Suppliers = () => {
