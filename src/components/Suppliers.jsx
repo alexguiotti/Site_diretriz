@@ -2,47 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { ExternalLink, ImageOff } from 'lucide-react';
 import { api } from '../services/api';
 
-// Function to get domain from URL for logo fetching
-const getDomain = (url) => {
-    try {
-        const domain = new URL(url).hostname;
-        return domain.replace('www.', '');
-    } catch (e) {
-        return '';
-    }
-};
-
 const SupplierCard = ({ supplier }) => {
-    const [imageError, setImageError] = useState(false);
-    const domain = getDomain(supplier.url);
-    // Use custom logo URL if provided, otherwise fallback to Clearbit
-    const logoUrl = supplier.logoUrl || `https://logo.clearbit.com/${domain}`;
-
     return (
         <a
             href={supplier.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 w-72 h-48 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-accent hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-between mx-6 group relative overflow-hidden"
+            className="flex-shrink-0 w-64 h-32 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-accent hover:shadow-lg transition-all duration-300 flex items-center justify-center mx-4 group relative overflow-hidden"
             title={supplier.name}
         >
-            <div className="flex-1 w-full flex items-center justify-center p-6">
-                {!imageError ? (
-                    <img
-                        src={logoUrl}
-                        alt={`${supplier.name} logo`}
-                        className="max-w-full max-h-20 object-contain transition-all duration-300 group-hover:scale-110"
-                        onError={() => setImageError(true)}
-                    />
-                ) : (
-                    <div className="flex flex-col items-center justify-center text-slate-400 group-hover:text-primary transition-colors">
-                        <ImageOff size={32} className="mb-2" />
-                    </div>
-                )}
-            </div>
-
-            <div className="w-full py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors">
-                <span className="font-bold text-sm text-slate-700 group-hover:text-white transition-colors">{supplier.name}</span>
+            <div className="flex flex-col items-center justify-center p-6 text-center">
+                <span className="font-bold text-lg text-slate-700 group-hover:text-primary transition-colors duration-300">
+                    {supplier.name}
+                </span>
+                <span className="text-xs text-slate-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Ver Site
+                </span>
             </div>
 
             <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
