@@ -16,9 +16,9 @@ const Header = ({ onLoginClick }) => {
         >
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 {/* Logo */}
-                <div className="flex items-center space-x-2">
-                    <img src={logo} alt="Diretriz Automotiva Logo" className="h-12 w-auto rounded-xl" />
-                    <span className="text-2xl font-bold tracking-tight text-primary">Diretriz Automotiva</span>
+                <div className="flex items-center space-x-3">
+                    <img src={logo} alt="Diretriz Automotiva Logo" className="h-16 w-auto rounded-xl" />
+                    <span className="text-2xl md:text-3xl font-bold tracking-tight text-primary">Diretriz Automotiva</span>
                 </div>
 
                 {/* Desktop Navigation */}

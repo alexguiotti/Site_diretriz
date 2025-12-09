@@ -21,13 +21,13 @@ const TechSpotlight = () => {
     }, []);
 
     return (
-        <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
+        <section className="py-16 relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
             {/* Ambient Background Elements */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-16">
+                <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Content */}
                     <div className="lg:w-1/2">
                         <motion.div
@@ -50,7 +50,7 @@ const TechSpotlight = () => {
                                 Mais do que peças, entregamos soluções. Nossa infraestrutura logística conecta as melhores fábricas diretamente ao seu negócio com agilidade e precisão.
                             </p>
 
-                            <div className="space-y-4 mb-10">
+                            <div className="space-y-4 mb-8">
                                 {[
                                     { icon: Package, text: "Estoque Pronta-Entrega", sub: "Mais de 15.000 itens disponíveis" },
                                     { icon: MapPin, text: "Cobertura Regional", sub: "Entregas diárias em todo o estado" }

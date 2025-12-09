@@ -41,11 +41,11 @@ const Features = () => {
     };
 
     return (
-        <section id="features" className="py-24 relative bg-white overflow-hidden">
+        <section id="features" className="py-16 relative bg-white overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

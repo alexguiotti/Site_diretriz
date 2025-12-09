@@ -141,12 +141,12 @@ const Suppliers = () => {
     if (suppliers.length === 0) return null;
 
     return (
-        <section id="suppliers" className="py-24 bg-primary relative overflow-hidden">
+        <section id="suppliers" className="py-16 bg-primary relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 to-primary"></div>
             <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
 
-            <div className="container mx-auto px-4 mb-16 text-center relative z-10">
+            <div className="container mx-auto px-4 mb-12 text-center relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
                     Excelência Garantida pelos <span className="text-accent underline decoration-4 decoration-accent/30 underline-offset-4">Melhores Fabricantes</span>
                 </h2>

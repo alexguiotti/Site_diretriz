@@ -32,14 +32,14 @@ const Categories = () => {
     }
 
     return (
-        <section id="categories" className="py-24 bg-primary relative overflow-hidden">
+        <section id="categories" className="py-16 bg-primary relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:32px_32px]"></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-6">
                     <div>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Categorias</h2>
                         <p className="text-slate-300 text-lg max-w-xl">Encontre exatamente o que seu veículo precisa em nosso catálogo completo.</p>

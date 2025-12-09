@@ -3,7 +3,7 @@ import { CheckCircle } from 'lucide-react';
 
 const About = () => {
     return (
-        <section id="about" className="py-20 bg-white">
+        <section id="about" className="py-16 bg-white">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Image Side */}
@@ -42,7 +42,7 @@ const About = () => {
                         <div className="space-y-4">
                             <div className="flex items-center gap-3">
                                 <CheckCircle className="text-accent" size={24} />
-                                <span className="text-primary font-medium">Centro de distribuição com 5000m²</span>
+                                <span className="text-primary font-medium">Centro de distribuição com 2000m²</span>
                             </div>
                             <div className="flex items-center gap-3">
                                 <CheckCircle className="text-accent" size={24} />

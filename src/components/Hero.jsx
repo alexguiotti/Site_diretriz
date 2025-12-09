@@ -31,7 +31,7 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl"
                     >
-                        Conectando tecnologia e logística para entregar mais de 50.000 itens com precisão e velocidade. A evolução do seu negócio começa aqui.
+                        Conectando tecnologia e logística para entregar mais de 15.000 itens com precisão e velocidade. A evolução do seu negócio começa aqui.
                     </motion.p>
 
                     <motion.div
