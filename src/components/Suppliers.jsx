@@ -15,8 +15,10 @@ const getDomain = (url) => {
 const SupplierCard = ({ supplier }) => {
     const [imageError, setImageError] = useState(false);
     const domain = getDomain(supplier.url);
-    // Use custom logo URL if provided, otherwise fallback to Clearbit
-    const logoUrl = supplier.logoUrl || `https://logo.clearbit.com/${domain}`;
+
+    // Try Google's high-res favicon service first as it's very reliable for BR domains
+    // If a custom logoUrl exists, use that instead
+    const logoUrl = supplier.logoUrl || `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
 
     return (
         <a
@@ -31,8 +33,9 @@ const SupplierCard = ({ supplier }) => {
                     <img
                         src={logoUrl}
                         alt={`${supplier.name} logo`}
-                        className="max-w-full max-h-20 object-contain transition-all duration-300 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                        className="max-w-[80%] max-h-[80px] object-contain transition-all duration-300 group-hover:scale-110 grayscale group-hover:grayscale-0"
                         onError={() => setImageError(true)}
+                        loading="lazy"
                     />
                 ) : (
                     <div className="flex flex-col items-center justify-center text-slate-400 group-hover:text-primary transition-colors">
