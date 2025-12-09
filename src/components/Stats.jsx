@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Package, Users, Calendar, TrendingUp } from 'lucide-react';
 
 const stats = [
-    { icon: Package, value: "50k+", label: "Itens em Estoque", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
+    { icon: Package, value: "15k+", label: "Itens em Estoque", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
     { icon: Users, value: "1200+", label: "Oficinas Parceiras", color: "text-red-600", bg: "bg-red-50", border: "border-red-100" },
     { icon: Calendar, value: "5+", label: "Anos de Mercado", color: "text-slate-700", bg: "bg-slate-100", border: "border-slate-200" },
     { icon: TrendingUp, value: "98%", label: "Satisfação", color: "text-blue-500", bg: "bg-blue-50", border: "border-blue-100" },
