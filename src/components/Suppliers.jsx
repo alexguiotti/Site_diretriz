@@ -151,7 +151,7 @@ const Suppliers = () => {
                     Excelência Garantida pelos <span className="text-accent underline decoration-4 decoration-accent/30 underline-offset-4">Melhores Fabricantes</span>
                 </h2>
                 <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-                    Nossa curadoria de parceiros assegura que cada peça em seu estoque tenha a qualidade que seus clientes exigem.
+                    Selecionamos rigorosamente marcas de excelência global para garantir que seu estoque tenha a máxima confiabilidade e performance que o mercado exige.
                 </p>
             </div>
 
