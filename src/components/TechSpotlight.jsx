@@ -1,3 +1,7 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Truck, Package, MapPin } from 'lucide-react';
+
 const HIGHLIGHT_AREAS = [
     { title: "LINHA PESADA", subtitle: "Caminhões e Ônibus" },
     { title: "ELÉTRICA", subtitle: "Alternadores e Partida" },
