@@ -32,32 +32,37 @@ const Categories = () => {
     }
 
     return (
-        <section id="categories" className="py-20 bg-slate-50">
-            <div className="container mx-auto px-4">
-                <div className="flex justify-between items-end mb-12">
+        <section id="categories" className="py-24 bg-primary relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">Categorias</h2>
-                        <p className="text-secondary">Encontre exatamente o que você precisa</p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Categorias</h2>
+                        <p className="text-slate-300 text-lg max-w-xl">Encontre exatamente o que seu veículo precisa em nosso catálogo completo.</p>
                     </div>
-                    <a href="#" className="hidden md:flex items-center text-accent font-semibold hover:text-orange-600 transition-colors">
-                        Ver todo o catálogo <ArrowRightIcon size={20} className="ml-2" />
+                    <a href="#" className="flex items-center text-accent font-bold hover:text-white transition-colors group">
+                        Ver catálogo completo <ArrowRightIcon size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     {categories.map((cat, index) => (
-                        <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer border border-slate-100 group">
-                            <div className={`w-12 h-12 ${cat.color} rounded-lg flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform`}>
+                        <div key={index} className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-accent/50 hover:bg-white/10 transition-all duration-300 cursor-pointer group hover:-translate-y-1">
+                            <div className={`w-14 h-14 ${cat.color} rounded-xl flex items-center justify-center text-white mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                                 {cat.icon}
                             </div>
-                            <h3 className="font-bold text-primary text-lg">{cat.name}</h3>
-                            <p className="text-sm text-slate-500 mt-1">{cat.count}</p>
+                            <h3 className="font-bold text-white text-xl mb-2">{cat.name}</h3>
+                            <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors">{cat.count}</p>
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-8 text-center md:hidden">
-                    <a href="#" className="inline-flex items-center text-accent font-semibold hover:text-orange-600 transition-colors">
+                <div className="mt-12 text-center md:hidden">
+                    <a href="#" className="inline-flex items-center text-accent font-semibold hover:text-white transition-colors">
                         Ver todo o catálogo <ArrowRightIcon size={20} className="ml-2" />
                     </a>
                 </div>

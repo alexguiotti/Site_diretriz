@@ -21,7 +21,11 @@ const TechSpotlight = () => {
     }, []);
 
     return (
-        <section className="py-24 relative overflow-hidden bg-white">
+        <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
+            {/* Ambient Background Elements */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
             <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     {/* Content */}
@@ -51,7 +55,7 @@ const TechSpotlight = () => {
                                     { icon: Package, text: "Estoque Pronta-Entrega", sub: "Mais de 15.000 itens disponíveis" },
                                     { icon: MapPin, text: "Cobertura Regional", sub: "Entregas diárias em todo o estado" }
                                 ].map((item, index) => (
-                                    <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                                    <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm hover:shadow-md transition-all">
                                         <div className="p-2 rounded-lg bg-blue-50 text-primary">
                                             <item.icon size={24} />
                                         </div>

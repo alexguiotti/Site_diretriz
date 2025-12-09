@@ -50,8 +50,11 @@ const Footer = () => {
                         <h3 className="text-white font-bold mb-4">Contato</h3>
                         <ul className="space-y-3 text-sm">
                             <li className="flex items-start gap-3">
-                                <MapPin size={18} className="text-accent mt-0.5" />
-                                <span>R. João Alfredo, N° 447 - Quadra 61 Lote 15<br />Capuava, Goiânia - GO, 74450-340</span>
+                                <MapPin size={18} className="text-accent mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <p className="mb-1"><span className="font-bold text-white">Matriz:</span> R. João Alfredo, 447 - Goiânia, GO</p>
+                                    <p><span className="font-bold text-white">Filial:</span> R. 23, QD 131 - LT 9, Formosinha, Formosa - GO</p>
+                                </div>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone size={18} className="text-accent" />
