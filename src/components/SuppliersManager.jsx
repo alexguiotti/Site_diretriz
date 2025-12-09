@@ -68,7 +68,7 @@ const SuppliersManager = () => {
                         />
                         <input
                             type="text"
-                            placeholder="URL do Site (http://...)"
+                            placeholder="URL do Site (https://...)"
                             className="p-2 border rounded"
                             value={formData.url}
                             onChange={e => setFormData({ ...formData, url: e.target.value })}
