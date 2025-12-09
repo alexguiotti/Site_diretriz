@@ -1,43 +1,241 @@
 {
   "suppliers": [
-    { "id": 1, "name": "3M", "url": "https://www.3m.com.br" },
-    { "id": 2, "name": "3RHO", "url": "http://www.3rho.com.br/" },
-    { "id": 3, "name": "AJE", "url": "http://www.aje.ind.br/" },
-    { "id": 4, "name": "ALMAPY", "url": "https://www.almapy.com.br/" },
-    { "id": 5, "name": "ALPENFIX", "url": "http://www.alpenfix.com.br/" },
-    { "id": 6, "name": "AMEFIL", "url": "http://www.amefil.com.br/" },
-    { "id": 7, "name": "AMS", "url": "http://www.amscomponentes.com.br/" },
-    { "id": 8, "name": "ANTICO", "url": "http://www.antico.com.br/" },
-    { "id": 9, "name": "ARTEB", "url": "http://www.arteb.com.br/" },
-    { "id": 10, "name": "ASPOCK", "url": "http://www.aspock.com.br/" },
-    { "id": 11, "name": "AUTO POLI", "url": "http://www.autopoli.com.br/" },
-    { "id": 12, "name": "BOSAL", "url": "http://www.bosal.com/" },
-    { "id": 13, "name": "BRASLUX", "url": "http://www.braslux.com/" },
-    { "id": 14, "name": "CAR 80", "url": "http://www.car-80.com/por/index.html" },
-    { "id": 15, "name": "CARRHEL", "url": "http://www.carrhel.com.br/" },
-    { "id": 16, "name": "CERTA", "url": "http://www.certaimports.com.br/" },
-    { "id": 17, "name": "CINAP", "url": "http://www.cinap.com.br/" },
-    { "id": 18, "name": "COFRAN", "url": "http://www.cofran.com.br/" },
-    { "id": 19, "name": "CONIMEL", "url": "http://www.conimel.com.br/" },
-    { "id": 20, "name": "CONTITECH", "url": "http://www.conti-online.com/" },
-    { "id": 21, "name": "CORTISUL", "url": "http://www.cortisul.com.br/" },
-    { "id": 22, "name": "D PAULA", "url": "http://www.dpaula.com.br/" },
-    { "id": 23, "name": "DELCO REMY", "url": "http://www.remyinc.com.br/" },
-    { "id": 24, "name": "DELPHI", "url": "http://www.delphi.com/" },
-    { "id": 25, "name": "DENSO", "url": "https://www.denso.com/br/pt/" },
-    { "id": 26, "name": "DM REFLETIVOS", "url": "http://dmrefletivos.com.br/" },
-    { "id": 27, "name": "DNI", "url": "http://www.dni.com.br/" },
-    { "id": 28, "name": "DOFAB", "url": "http://www.dofab.com.br/" },
-    { "id": 29, "name": "DRIFT", "url": "http://www.driftdobrasil.com.br/" },
-    { "id": 30, "name": "DS", "url": "http://www.ds.ind.br/pt/" },
-    { "id": 31, "name": "DSC", "url": "http://www.dscautopecas.com.br/" },
-    { "id": 32, "name": "DYNA", "url": "http://www.dyna.com.br/" },
-    { "id": 33, "name": "EURO", "url": "http://www.traex.com.br/" },
-    { "id": 34, "name": "FACOBRAS", "url": "http://www.facobras.com.br/" },
-    { "id": 35, "name": "FIAMM", "url": "http://www.fiamm.com.br/" },
-    { "id": 36, "name": "FLORIO", "url": "http://www.florio.com.br/" },
-    { "id": 37, "name": "FORTLUZ", "url": "http://www.farois-fortluz.com.br/" },
-    { "id": 38, "name": "G.F.", "url": "http://www.gflanternas.com.br/" }
+    {
+      "name": "ZM",
+      "url": "https://www.zm.com.br"
+    },
+    {
+      "name": "IKRO",
+      "url": "https://www.ikro.com.br"
+    },
+    {
+      "name": "Gauss",
+      "url": "https://www.gauss.com.br"
+    },
+    {
+      "name": "Delco Remy",
+      "url": "https://www.delcoremy.com.br"
+    },
+    {
+      "name": "Unifap",
+      "url": "https://www.unifap.com.br"
+    },
+    {
+      "name": "ASX",
+      "url": "https://www.asxiluminacao.com.br"
+    },
+    {
+      "name": "Bosch",
+      "url": "https://www.bosch.com.br"
+    },
+    {
+      "name": "Kostal",
+      "url": "https://www.kostalbrasil.com.br"
+    },
+    {
+      "name": "Marília",
+      "url": "https://www.marilia-sa.com.br"
+    },
+    {
+      "name": "DNI",
+      "url": "https://www.dni.com.br"
+    },
+    {
+      "name": "Euro",
+      "url": "https://www.euroautomotive.com.br"
+    },
+    {
+      "name": "Hella",
+      "url": "https://www.hella.com"
+    },
+    {
+      "name": "BZM",
+      "url": "https://www.bzm.com.br"
+    },
+    {
+      "name": "Turotest",
+      "url": "https://www.turotest.com.br"
+    },
+    {
+      "name": "Contacts",
+      "url": "https://www.contacts.com.br"
+    },
+    {
+      "name": "3RHO",
+      "url": "https://www.3rho.com.br"
+    },
+    {
+      "name": "Osram",
+      "url": "https://www.osram.com.br"
+    },
+    {
+      "name": "MTE-Thomson",
+      "url": "https://www.mte-thomson.com.br"
+    },
+    {
+      "name": "Pradolux",
+      "url": "https://www.pradolux.com.br"
+    },
+    {
+      "name": "Dita",
+      "url": "https://www.ditaauto.com.br"
+    },
+    {
+      "name": "Ospina",
+      "url": "https://www.ospina.com.br"
+    },
+    {
+      "name": "Facobras",
+      "url": "https://www.facobras.com.br"
+    },
+    {
+      "name": "TSA",
+      "url": "https://www.tsadobrasil.com.br"
+    },
+    {
+      "name": "D'Paula",
+      "url": "https://www.dpaula.com.br"
+    },
+    {
+      "name": "Rainha das Sete",
+      "url": "https://www.rainhadasete.com.br"
+    },
+    {
+      "name": "Cinap",
+      "url": "https://www.cinap.com.br"
+    },
+    {
+      "name": "DS",
+      "url": "https://www.ds.ind.br"
+    },
+    {
+      "name": "Schadek",
+      "url": "https://www.schadek.com.br"
+    },
+    {
+      "name": "Power",
+      "url": "https://www.powerautomotiva.com.br"
+    },
+    {
+      "name": "FAG",
+      "url": "https://www.schaeffler.com.br"
+    },
+    {
+      "name": "H3",
+      "url": "https://www.h3imports.com"
+    },
+    {
+      "name": "Fortluz",
+      "url": "https://www.farois-fortluz.com.br"
+    },
+    {
+      "name": "IVA",
+      "url": "https://www.iva-autopecas.com.br"
+    },
+    {
+      "name": "Snap-on",
+      "url": "https://www.snapon.com.br"
+    },
+    {
+      "name": "Marflex",
+      "url": "https://www.marflex.com.br"
+    },
+    {
+      "name": "Engatcar",
+      "url": "https://www.engatcar.com.br"
+    },
+    {
+      "name": "Forjisinter",
+      "url": "https://www.forjisinter.com.br"
+    },
+    {
+      "name": "Conex",
+      "url": "https://www.conex.com.br"
+    },
+    {
+      "name": "Bobinauto",
+      "url": "https://www.bobinauto.com.br"
+    },
+    {
+      "name": "TC Chicotes",
+      "url": "https://www.tcchicotes.com.br"
+    },
+    {
+      "name": "Destaque",
+      "url": "https://www.destaque.com.br"
+    },
+    {
+      "name": "Sinalsul",
+      "url": "https://www.sinalsul.com.br"
+    },
+    {
+      "name": "Autopoli",
+      "url": "https://www.autopoli.com.br"
+    },
+    {
+      "name": "Fiamm",
+      "url": "https://www.fiamm.com"
+    },
+    {
+      "name": "Hikari",
+      "url": "https://www.hikarilampadas.com.br"
+    },
+    {
+      "name": "Sulcarbon",
+      "url": "https://www.sulcarbon.com.br"
+    },
+    {
+      "name": "Paraflu",
+      "url": "https://www.paraflu.com.br"
+    },
+    {
+      "name": "Edaulo",
+      "url": "https://www.edaulo.com.br"
+    },
+    {
+      "name": "AMS",
+      "url": "https://www.ams-osram.com"
+    },
+    {
+      "name": "Wahler",
+      "url": "https://www.wahler.com.br"
+    },
+    {
+      "name": "Auto Impact",
+      "url": "https://www.autoimpact.com.br"
+    },
+    {
+      "name": "Sherman",
+      "url": "https://www.sherman.com.br"
+    },
+    {
+      "name": "Frontec",
+      "url": "https://www.frontec.com.br"
+    },
+    {
+      "name": "G.Busch",
+      "url": "https://www.gbusch.com.br"
+    },
+    {
+      "name": "Qualyten",
+      "url": "https://www.qualyten.com.br"
+    },
+    {
+      "name": "Granero",
+      "url": "https://www.granero.com.br"
+    },
+    {
+      "name": "Orbi Química",
+      "url": "https://www.orbiquimica.com.br"
+    },
+    {
+      "name": "Roltens",
+      "url": "https://www.roltens.com.br"
+    },
+    {
+      "name": "Ori",
+      "url": "https://www.ori.com.br"
+    }
   ],
   "users": [
     {

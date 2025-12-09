@@ -1,16 +1,17 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import jwt from 'jsonwebtoken';
+import fs from 'fs/promises';
 
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const DB_PATH = path.join(__dirname, 'db.json');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -20,26 +21,25 @@ const JWT_SECRET = process.env.JWT_SECRET || 'sua_chave_secreta_super_segura_dev
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI;
+// Helper to read DB
+const readDb = async () => {
+    try {
+        const data = await fs.readFile(DB_PATH, 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Error reading db.json:', error);
+        return { suppliers: [], users: [] };
+    }
+};
 
-if (!MONGODB_URI) {
-    console.error('Erro: MONGODB_URI não definida no arquivo .env');
-} else {
-    mongoose.connect(MONGODB_URI)
-        .then(() => console.log('Conectado ao MongoDB com sucesso'))
-        .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
-}
-
-// Schemas
-const SupplierSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    url: { type: String, required: true },
-    logo: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now }
-});
-
-const Supplier = mongoose.model('Supplier', SupplierSchema);
+// Helper to write DB
+const writeDb = async (data) => {
+    try {
+        await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2));
+    } catch (error) {
+        console.error('Error writing db.json:', error);
+    }
+};
 
 // Auth Middleware
 const authenticateToken = (req, res, next) => {
@@ -56,18 +56,22 @@ const authenticateToken = (req, res, next) => {
 };
 
 // Login Endpoint
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    // Hardcoded admin for simplicity/bootstrap
-    if (email === 'admin@diretriz.com' && password === '123') {
-        const user = { name: 'Administrador', email: 'admin@diretriz.com', role: 'admin' };
-        const token = jwt.sign(user, JWT_SECRET, { expiresIn: '8h' });
+    // Simple check against hardcoded val or db users. 
+    // Using hardcoded for simplicity as per original requirement or check db users
+    const db = await readDb();
+    const user = db.users.find(u => u.username === email || u.username === 'admin'); // Allow 'admin' username too
+
+    if ((email === 'admin@diretriz.com' && password === '123') || (user && user.password === password)) {
+        const userData = { name: user ? user.name : 'Administrador', email: email, role: 'admin' };
+        const token = jwt.sign(userData, JWT_SECRET, { expiresIn: '8h' });
 
         res.json({
             success: true,
             token,
-            user
+            user: userData
         });
     } else {
         res.status(401).json({ success: false, message: 'Credenciais inválidas' });
@@ -77,8 +81,8 @@ app.post('/login', (req, res) => {
 // Get Suppliers (Public)
 app.get('/suppliers', async (req, res) => {
     try {
-        const suppliers = await Supplier.find().sort({ createdAt: -1 });
-        res.json(suppliers);
+        const db = await readDb();
+        res.json(db.suppliers);
     } catch (error) {
         res.status(500).json({ message: 'Erro ao buscar fornecedores', error });
     }
@@ -88,14 +92,22 @@ app.get('/suppliers', async (req, res) => {
 app.post('/suppliers', authenticateToken, async (req, res) => {
     try {
         const { name, url, logo } = req.body;
-
         // Basic Validation
-        if (!name || !url || !logo) {
-            return res.status(400).json({ message: 'Todos os campos (nome, url, logo) são obrigatórios.' });
+        if (!name || !url) {
+            return res.status(400).json({ message: 'Nome e URL são obrigatórios.' });
         }
 
-        const newSupplier = new Supplier({ name, url, logo });
-        await newSupplier.save();
+        const db = await readDb();
+        const newSupplier = {
+            id: Date.now(), // Simple ID generation
+            name,
+            url,
+            logo: logo || '' // Optional logo since we use fetching
+        };
+
+        db.suppliers.push(newSupplier);
+        await writeDb(db);
+
         res.json(newSupplier);
     } catch (error) {
         res.status(500).json({ message: 'Erro ao adicionar fornecedor', error });
@@ -108,14 +120,13 @@ app.put('/suppliers/:id', authenticateToken, async (req, res) => {
         const { id } = req.params;
         const { name, url, logo } = req.body;
 
-        if (!name || !url || !logo) {
-            return res.status(400).json({ message: 'Todos os campos (nome, url, logo) são obrigatórios.' });
-        }
+        const db = await readDb();
+        const index = db.suppliers.findIndex(s => s.id == id || s._id == id);
 
-        const updatedSupplier = await Supplier.findByIdAndUpdate(id, { name, url, logo }, { new: true });
-
-        if (updatedSupplier) {
-            res.json(updatedSupplier);
+        if (index !== -1) {
+            db.suppliers[index] = { ...db.suppliers[index], name, url, logo };
+            await writeDb(db);
+            res.json(db.suppliers[index]);
         } else {
             res.status(404).json({ message: 'Fornecedor não encontrado' });
         }
@@ -128,8 +139,16 @@ app.put('/suppliers/:id', authenticateToken, async (req, res) => {
 app.delete('/suppliers/:id', authenticateToken, async (req, res) => {
     try {
         const { id } = req.params;
-        await Supplier.findByIdAndDelete(id);
-        res.json({ success: true });
+        const db = await readDb();
+        const filteredSuppliers = db.suppliers.filter(s => s.id != id && s._id != id);
+
+        if (db.suppliers.length !== filteredSuppliers.length) {
+            db.suppliers = filteredSuppliers;
+            await writeDb(db);
+            res.json({ success: true });
+        } else {
+            res.status(404).json({ message: 'Fornecedor não encontrado' });
+        }
     } catch (error) {
         res.status(500).json({ message: 'Erro ao remover fornecedor', error });
     }
@@ -137,7 +156,7 @@ app.delete('/suppliers/:id', authenticateToken, async (req, res) => {
 
 // Health Check
 app.get('/', (req, res) => {
-    res.send('API Autopecas-Pro rodando com segurança!');
+    res.send('API Autopecas-Pro rodando com segurança (JSON Mode)!');
 });
 
 app.listen(PORT, () => {
