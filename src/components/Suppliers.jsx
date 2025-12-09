@@ -33,7 +33,7 @@ const SupplierCard = ({ supplier }) => {
                     <img
                         src={logoUrl}
                         alt={`${supplier.name} logo`}
-                        className="max-w-[80%] max-h-[80px] object-contain transition-all duration-300 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                        className="max-w-[80%] max-h-[80px] object-contain transition-all duration-300 group-hover:scale-110"
                         onError={() => setImageError(true)}
                         loading="lazy"
                     />
