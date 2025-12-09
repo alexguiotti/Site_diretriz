@@ -141,16 +141,24 @@ const Suppliers = () => {
     if (suppliers.length === 0) return null;
 
     return (
-        <section id="suppliers" className="py-16 bg-slate-50 overflow-hidden">
-            <div className="container mx-auto px-4 mb-10 text-center">
-                <h2 className="text-3xl font-bold text-primary mb-4">Nossos Parceiros</h2>
-                <p className="text-slate-600">Trabalhamos com as marcas mais confiáveis do mercado automotivo.</p>
+        <section id="suppliers" className="py-24 bg-primary relative overflow-hidden">
+            {/* Background Effects */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 to-primary"></div>
+            <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
+
+            <div className="container mx-auto px-4 mb-16 text-center relative z-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+                    Excelência Garantida pelos <span className="text-accent underline decoration-4 decoration-accent/30 underline-offset-4">Melhores Fabricantes</span>
+                </h2>
+                <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Nossa curadoria de parceiros assegura que cada peça em seu estoque tenha a qualidade que seus clientes exigem.
+                </p>
             </div>
 
             <div className="relative w-full pause-on-hover">
                 {/* Gradient Masks */}
-                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-primary to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none"></div>
 
                 {/* Marquee Container */}
                 <div className="flex animate-marquee w-max">
