@@ -60,11 +60,15 @@ const TechSpotlight = () => {
                             <div className="relative w-full aspect-square max-w-md mx-auto">
                                 <div className="absolute inset-0 bg-blue-600 rounded-2xl opacity-10 blur-2xl -rotate-6"></div>
                                 <div className="relative h-full bg-white border border-slate-200 rounded-2xl p-2 shadow-xl overflow-hidden">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop"
-                                        alt="Centro de Distribuição"
-                                        className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-700"
-                                    />
+                                    <div className="w-full h-full bg-slate-50 flex items-center justify-center p-8 relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                                        <div className="relative z-10 w-48 h-48 bg-white rounded-full shadow-2xl flex items-center justify-center border-4 border-slate-100">
+                                            <div className="text-center">
+                                                <div className="text-4xl font-bold text-primary mb-1">50k+</div>
+                                                <div className="text-xs text-slate-500 font-medium">ITENS ADICIONADOS</div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     {/* Floating Tech Badges */}
                                     <motion.div

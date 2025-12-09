@@ -6,13 +6,11 @@ const Hero = () => {
     return (
         <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden bg-slate-50">
             {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
-                <img
-                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
-                    alt="Centro de Distribuição"
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/95 to-slate-50/20"></div>
+            {/* Background with Abstract Pattern */}
+            <div className="absolute inset-0 z-0 bg-slate-50">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/5 opacity-20 blur-[100px]"></div>
+                <div className="absolute right-0 bottom-0 -z-10 h-[310px] w-[310px] rounded-full bg-accent/5 opacity-20 blur-[100px]"></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
