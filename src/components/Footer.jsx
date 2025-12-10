@@ -52,7 +52,7 @@ const Footer = () => {
                             <li className="flex items-start gap-3">
                                 <MapPin size={18} className="text-accent mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <p className="mb-1"><span className="font-bold text-white">Matriz:</span> R. João Alfredo, 447 - Goiânia - GO</p>
+                                    <p className="mb-1"><span className="font-bold text-white">Matriz:</span> R. João Alfredo, esquina com Av. Cunha Gago, 447 - Goiânia - GO</p>
                                     <p><span className="font-bold text-white">Filial:</span> R. 23, QD 131 - LT 9, Formosinha, Formosa - GO</p>
                                 </div>
                             </li>
