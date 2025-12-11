@@ -55,9 +55,9 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight tracking-tight text-white"
                     >
-                        Potência para <br />
+                        A Diretriz certa para <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-200 to-white">
-                            mover o seu negócio
+                            impulsionar o seu negócio
                         </span>
                     </motion.h1>
 
@@ -99,12 +99,14 @@ const Hero = () => {
                             Falar com Consultor
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </a>
+                        {/* 
                         <a
                             href="#categories"
                             className="group w-full sm:w-auto bg-transparent hover:bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-3 hover:border-slate-500 backdrop-blur-sm"
                         >
                             Ver Catálogo
-                        </a>
+                        </a> 
+                        */}
                     </motion.div>
                 </div>
 
