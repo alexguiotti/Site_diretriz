@@ -101,7 +101,7 @@ const Hero = () => {
                         </a>
                         <a
                             href="#categories"
-                            className="group w-full sm:w-auto bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-3 hover:border-slate-500 backdrop-blur-sm"
+                            className="group w-full sm:w-auto bg-transparent hover:bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-3 hover:border-slate-500 backdrop-blur-sm"
                         >
                             Ver Catálogo
                         </a>
