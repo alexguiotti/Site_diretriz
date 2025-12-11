@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden bg-slate-900 selection:bg-accent selection:text-white">
+        <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden bg-slate-900 selection:bg-accent selection:text-white pb-24">
             {/* Dynamic Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Main Gradient Base */}
